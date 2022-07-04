@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7726348528589D870078F927 /* DetailEmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7726348428589D870078F927 /* DetailEmployeeVC.swift */; };
 		775794CC285788A3003C5D8D /* AddPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775794CB285788A3003C5D8D /* AddPhoneVC.swift */; };
 		775AB08C2850B71C0076036C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AB08B2850B71C0076036C /* AppDelegate.swift */; };
 		775AB08E2850B71C0076036C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AB08D2850B71C0076036C /* SceneDelegate.swift */; };
@@ -25,11 +24,11 @@
 		775AB0DD285498F30076036C /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AB0DC285498F30076036C /* Position.swift */; };
 		775AB0DF2854A12B0076036C /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AB0DE2854A12B0076036C /* DataContainer.swift */; };
 		776E6902285645AA00ABF1EC /* DependencyInjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E6901285645AA00ABF1EC /* DependencyInjectionContainer.swift */; };
-		7770491928561D01005CCE05 /* AddEmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7770491828561D01005CCE05 /* AddEmployeeVC.swift */; };
+		B04BA66028733DF200011588 /* EmployeeEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BA65F28733DF200011588 /* EmployeeEditVC.swift */; };
+		B04BA6622873596C00011588 /* PositionSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BA6612873596C00011588 /* PositionSelectionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7726348428589D870078F927 /* DetailEmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEmployeeVC.swift; sourceTree = "<group>"; };
 		775794CB285788A3003C5D8D /* AddPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoneVC.swift; sourceTree = "<group>"; };
 		775AB0882850B71C0076036C /* Firm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Firm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		775AB08B2850B71C0076036C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +48,8 @@
 		775AB0DC285498F30076036C /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		775AB0DE2854A12B0076036C /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 		776E6901285645AA00ABF1EC /* DependencyInjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionContainer.swift; sourceTree = "<group>"; };
-		7770491828561D01005CCE05 /* AddEmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeVC.swift; sourceTree = "<group>"; };
+		B04BA65F28733DF200011588 /* EmployeeEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeEditVC.swift; sourceTree = "<group>"; };
+		B04BA6612873596C00011588 /* PositionSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionSelectionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,13 +107,13 @@
 		775AB0A12850B7EE0076036C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				775794CB285788A3003C5D8D /* AddPhoneVC.swift */,
+				775AB0DE2854A12B0076036C /* DataContainer.swift */,
+				776E6901285645AA00ABF1EC /* DependencyInjectionContainer.swift */,
+				B04BA65F28733DF200011588 /* EmployeeEditVC.swift */,
 				775AB08F2850B71C0076036C /* FirmVC.swift */,
 				775AB0AE2850BC760076036C /* PhoneVC.swift */,
-				7770491828561D01005CCE05 /* AddEmployeeVC.swift */,
-				7726348428589D870078F927 /* DetailEmployeeVC.swift */,
-				775794CB285788A3003C5D8D /* AddPhoneVC.swift */,
-				776E6901285645AA00ABF1EC /* DependencyInjectionContainer.swift */,
-				775AB0DE2854A12B0076036C /* DataContainer.swift */,
+				B04BA6612873596C00011588 /* PositionSelectionVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -225,16 +225,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7726348528589D870078F927 /* DetailEmployeeVC.swift in Sources */,
 				775AB0DD285498F30076036C /* Position.swift in Sources */,
 				775AB0A52850B91E0076036C /* FirmMain.swift in Sources */,
 				775AB0D42853CC420076036C /* FirmApi.swift in Sources */,
 				775AB0902850B71C0076036C /* FirmVC.swift in Sources */,
 				775AB08C2850B71C0076036C /* AppDelegate.swift in Sources */,
 				775AB0D92853D1EB0076036C /* FirmService.swift in Sources */,
-				7770491928561D01005CCE05 /* AddEmployeeVC.swift in Sources */,
 				775AB0A72850B9420076036C /* Employee.swift in Sources */,
 				775794CC285788A3003C5D8D /* AddPhoneVC.swift in Sources */,
+				B04BA6622873596C00011588 /* PositionSelectionVC.swift in Sources */,
+				B04BA66028733DF200011588 /* EmployeeEditVC.swift in Sources */,
 				775AB0A92850B9660076036C /* Phone.swift in Sources */,
 				775AB0D72853D0F00076036C /* InMemoryFirmApiImplementation.swift in Sources */,
 				775AB0DF2854A12B0076036C /* DataContainer.swift in Sources */,

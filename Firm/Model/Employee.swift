@@ -5,10 +5,10 @@ struct Employee {
     
     var name: String
     var position: Position!
-    let hiredAt: Date
+    var hiredAt: Date
     var phones: [Phone]?
-    var id: String
-    
+    var id: String?
+
     mutating func addPhone(phone: Phone) {
         phones?.append(phone)
         

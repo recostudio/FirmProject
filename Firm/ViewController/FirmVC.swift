@@ -2,13 +2,17 @@
 import UIKit
 
 
-class FirmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FirmVC: UIViewController, UITableViewDelegate, UITableViewDataSource, EmployeeEditDelegate {
     
     let firmService: FirmService = DependencyInjectionContainer.firmService
     
     @IBOutlet weak var tableView: UITableView!
     
-    var filteredEmployees: [Employee] { DataContainer.firm.employees.filter { $0.phones != nil && $0.phones?.isEmpty == false }
+//    var filteredEmployees: [Employee] { DataContainer.firm.employees.filter { $0.phones != nil && $0.phones?.isEmpty == false }
+//    }
+
+    var filteredEmployees: [Employee] {
+        DataContainer.firm.employees
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -26,27 +30,34 @@ class FirmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
      
     }
-  
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let selectedPath = tableView.indexPathForSelectedRow else { return }
-        if let target = segue.destination as? DetailEmployeeVC {
-            target.employee = filteredEmployees[selectedPath.row]
+        if let target = segue.destination as? EmployeeEditVC {
+            target.delegate = self
+
+            if let selectedIndexPath = self.tableView.indexPathForSelectedRow, segue.identifier == "editEmployee" {
+                target.title = "Edit employee"
+                target.employee = filteredEmployees[selectedIndexPath.row]
+            } else {
+                target.title = "Add employee"
+                target.employee = Employee(name: "", hiredAt: .now)
+            }
+
+        } else if let target = segue.destination as? AddPhoneVC {
+            // TODO: Implement...
         }
     }
-    
+
     func initFirm() {
         DataContainer.firm = firmService.getFirmData()
         DataContainer.firm.employees = firmService.getEmployees()
     }
-    
+
+    // MARK: - UITableViewDataSource methods
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(filteredEmployees.count)
         return filteredEmployees.count
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            performSegue(withIdentifier: "goToDetailEmployee", sender: nil)
-
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,5 +70,10 @@ class FirmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.lineBreakMode = .byWordWrapping
         return cell
     }
-    
+
+    // MARK: - EmployeeEditDelegate methods
+
+    func employeeEditDone(_ vc: EmployeeEditVC) {
+        self.tableView.reloadData()
+    }
 }
