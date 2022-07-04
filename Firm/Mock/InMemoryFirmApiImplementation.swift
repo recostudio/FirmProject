@@ -77,7 +77,18 @@ class InMemoryFirmApiImplementation: FirmApi {
     func addEmployee(newEmployee: Employee) {
         employees.append(newEmployee)
     }
-    
+
+    func editEmployee(_ employee: Employee) -> Bool {
+        guard !employee.id.isEmpty else {
+            return false
+        }
+        guard let index = employees.firstIndex(where: { $0.id == employee.id }) else {
+            return false
+        }
+        employees[index] = employee
+        return true
+    }
+
     func addPhone(newPhone: Phone) {
         phones.append(newPhone)
     }
