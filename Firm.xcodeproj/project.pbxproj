@@ -25,6 +25,7 @@
 		775AB0DF2854A12B0076036C /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AB0DE2854A12B0076036C /* DataContainer.swift */; };
 		776E6902285645AA00ABF1EC /* DependencyInjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E6901285645AA00ABF1EC /* DependencyInjectionContainer.swift */; };
 		B04BA66028733DF200011588 /* EmployeeEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BA65F28733DF200011588 /* EmployeeEditVC.swift */; };
+		B04BA6622873596C00011588 /* PositionSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BA6612873596C00011588 /* PositionSelectionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		775AB0DE2854A12B0076036C /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 		776E6901285645AA00ABF1EC /* DependencyInjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionContainer.swift; sourceTree = "<group>"; };
 		B04BA65F28733DF200011588 /* EmployeeEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeEditVC.swift; sourceTree = "<group>"; };
+		B04BA6612873596C00011588 /* PositionSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionSelectionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				B04BA65F28733DF200011588 /* EmployeeEditVC.swift */,
 				775AB08F2850B71C0076036C /* FirmVC.swift */,
 				775AB0AE2850BC760076036C /* PhoneVC.swift */,
+				B04BA6612873596C00011588 /* PositionSelectionVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				775AB0D92853D1EB0076036C /* FirmService.swift in Sources */,
 				775AB0A72850B9420076036C /* Employee.swift in Sources */,
 				775794CC285788A3003C5D8D /* AddPhoneVC.swift in Sources */,
+				B04BA6622873596C00011588 /* PositionSelectionVC.swift in Sources */,
 				B04BA66028733DF200011588 /* EmployeeEditVC.swift in Sources */,
 				775AB0A92850B9660076036C /* Phone.swift in Sources */,
 				775AB0D72853D0F00076036C /* InMemoryFirmApiImplementation.swift in Sources */,

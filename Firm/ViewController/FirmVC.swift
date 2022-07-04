@@ -40,6 +40,7 @@ class FirmVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Empl
                 target.employee = filteredEmployees[selectedIndexPath.row]
             } else {
                 target.title = "Add employee"
+                target.employee = Employee(name: "", hiredAt: .now)
             }
 
         } else if let target = segue.destination as? AddPhoneVC {

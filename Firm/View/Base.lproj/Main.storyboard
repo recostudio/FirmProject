@@ -84,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="drr-SS-Wcb">
-                                <rect key="frame" x="20" y="148" width="374" height="533"/>
+                                <rect key="frame" x="20" y="148" width="374" height="530"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yhf-FC-lJR">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -99,27 +99,33 @@
                                                 <rect key="frame" x="57.5" y="0.0" width="316.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="nameEdited:" destination="cqd-nD-Q4W" eventType="editingChanged" id="at5-c0-t9O"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Xh-bk-eF9">
-                                        <rect key="frame" x="0.0" y="56" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="56" width="374" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U76-zb-ieP">
-                                                <rect key="frame" x="0.0" y="0.0" width="65.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="65.5" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cjq-E1-VT1">
-                                                <rect key="frame" x="73.5" y="0.0" width="300.5" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wM0-ak-xaj">
+                                                <rect key="frame" x="73.5" y="0.0" width="300.5" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Select..."/>
+                                                <connections>
+                                                    <segue destination="EcV-a1-qki" kind="show" identifier="positionSelection" id="x1S-YB-FYz"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lYT-xp-HcC">
-                                        <rect key="frame" x="0.0" y="112" width="374" height="365"/>
+                                        <rect key="frame" x="0.0" y="109" width="374" height="365"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hire date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6Y-qJ-Zdk">
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="365"/>
@@ -129,11 +135,14 @@
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="ccu-pO-1Jl">
                                                 <rect key="frame" x="82" y="0.0" width="292" height="365"/>
+                                                <connections>
+                                                    <action selector="hireDateValueChanged:" destination="cqd-nD-Q4W" eventType="valueChanged" id="dAl-o3-9hi"/>
+                                                </connections>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uHR-qf-Vxv">
-                                        <rect key="frame" x="0.0" y="499" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="496" width="374" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phones:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbV-tm-nBl">
                                                 <rect key="frame" x="0.0" y="0.0" width="61.5" height="34"/>
@@ -164,12 +173,50 @@
                         <outlet property="hireDatePicker" destination="ccu-pO-1Jl" id="5SC-I7-hJS"/>
                         <outlet property="nameTextInput" destination="Hun-VO-Ctg" id="R1a-MW-edO"/>
                         <outlet property="phonesTextInput" destination="WqF-jy-uLT" id="IBK-O9-fmC"/>
-                        <outlet property="positionTextInput" destination="Cjq-E1-VT1" id="S3e-wl-BTG"/>
+                        <outlet property="positionSelectionButton" destination="wM0-ak-xaj" id="H6C-yb-1ip"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cn-aV-kML" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1929" y="262"/>
+        </scene>
+        <!--Select position-->
+        <scene sceneID="MSH-4g-hgn">
+            <objects>
+                <tableViewController id="EcV-a1-qki" customClass="PositionSelectionVC" customModule="Firm" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="7bQ-vM-boY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="positionCell" textLabel="ol6-jE-Gdb" style="IBUITableViewCellStyleDefault" id="mu5-W8-UTM">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mu5-W8-UTM" id="zX0-aH-U5F">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ol6-jE-Gdb">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EcV-a1-qki" id="Ke2-wb-aQz"/>
+                            <outlet property="delegate" destination="EcV-a1-qki" id="rEj-wB-Sgb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Select position" id="lt8-sq-3aS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uph-XW-Vxq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2781" y="262"/>
         </scene>
         <!--Add PhoneVC-->
         <scene sceneID="E8C-fS-kBt">
